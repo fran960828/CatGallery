@@ -1,0 +1,10 @@
+@use "../abstracts/abstracts" as *;
+.hero__favorites{
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding:10px;
+    background-color:$bg_tarjeta;
+    margin-bottom: 20px;
+}

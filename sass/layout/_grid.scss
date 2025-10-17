@@ -1,0 +1,7 @@
+@use "../abstracts/abstracts" as *;
+.main{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    padding:20px 40px;
+}

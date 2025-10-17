@@ -1,3 +1,8 @@
+@use "../abstracts/abstracts" as *;
 body {
+  width: 100%;
+  max-width: 100vw; /* Evita que se extienda más del ancho visible */
+  box-sizing: border-box; /* Asegura que padding y border no sumen al ancho */
   overflow-x: hidden;
+  background-color: $bg-color;
 }
