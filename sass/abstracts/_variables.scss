@@ -1,0 +1,59 @@
+// Breakpoints
+$bp-tablet: 768px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1200px;
+$bp-desktop-xl: 1440px;
+
+// Variables for fonts
+$font-primary: "Poppins", sans-serif;
+
+// Colors
+$bg-color: #f9fafb; // Fondo principal
+$bg_tarjeta: #ffffff; // Fondo de tarjetas/contenedores
+$color-main: #1f2937; // Texto principal
+$color-secondary: #6b7280; // Texto secundario
+$color-border: #e5e7eb; // Bordes/líneas suaves
+$color-primary: #2563eb; // Color primario (botones y acentos)
+$color-primary-hover: #1e40af; // Color hover (botones)
+$color-favorite: #ef4444; // Color de favoritos (corazón activo)
+$color-error: #dc2626; // Texto de error
+$bg-error: #fef2f2; // Fondo de alerta de error
+$hover-shadow: rgba(0, 0, 0, 0.08); // Hover en tarjetas (sombra o borde)
+$modal-overlay: rgba(0, 0, 0, 0.5); // Fondo semitransparente para modales
+
+// Buttons
+$btn-bg: $color-primary; // Fondo de botones
+$btn-text: $bg_tarjeta; // Texto de botones
+$btn-border-radius: 8px; // Bordes redondeados
+$btn-padding: 10px 20px; // Padding
+$btn-transition: all 0.2s ease-in-out; // Transición
+$btn-hover-bg: $color-primary-hover; // Fondo en hover
+$btn-hover-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); // Sombra en hover
+
+// Secondary Buttons
+$btn-secondary-bg: transparent; // Fondo de botón secundario
+$btn-secondary-border: 1px solid $color-primary; // Borde de botón secundario
+$btn-secondary-text: $color-primary; // Texto de botón secundario
+$btn-secondary-hover-bg: $color-primary; // Fondo en hover de botón secundario
+$btn-secondary-hover-text: $bg_tarjeta; // Texto en hover de botón secundario
+
+// Loading and Error States
+$loading-text: $color-secondary; // Texto de carga
+$loading-opacity: 0.5; // Opacidad de fondo o sección atenuada
+$error-text: $color-error; // Texto de error
+$error-bg: $bg-error; // Fondo de alerta de error
+$error-border-radius: 8px; // Bordes redondeados
+$error-padding: 8px 12px; // Padding sutil
+
+// Interaction Details
+$hover-img-transform: scale(1.02); // Transformación en hover de imágenes
+$hover-img-shadow: $hover-shadow; // Sombra ligera en hover de imágenes
+$favorite-icon-default: #d1d5db; // Ícono de corazón inactivo
+$favorite-icon-active: $color-favorite; // Ícono de corazón activo
+$favorite-transition: all 0.3s ease; // Transición suave para favoritos
+
+// Modal
+$modal-bg: $bg_tarjeta; // Fondo del cuadro modal
+$modal-overlay-bg: $modal-overlay; // Fondo semitransparente negro
+$modal-border-radius: 12px; // Esquinas redondeadas
+$modal-padding: 20px; // Padding interno
