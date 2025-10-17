@@ -8,7 +8,7 @@ export class CatApi {
   async fetchCats({
     page = 0,
     limit = 9,
-    api_key = process.env.CAT_API_KEY,
+    api_key = import.meta.env.VITE_CAT_API_KEY,
     breed_ids,
     mime_types,
     has_breeds = true,

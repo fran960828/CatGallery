@@ -2,13 +2,6 @@
 import "../sass/style.scss";
 import { App } from "./app/app";
 
-// URL de la API de The Cat API para obtener imágenes de gatos
-// La consulta está configurada para devolver 9 imágenes
-const key = {
-  "x-api-key":
-    "live_S1P0w7XlhXs5AQeZ1ST2rLbWjtvNeHBX8rGaL7pqmZdNxbXGlxKyxk7XQEUYsxgH",
-};
-
 import { fetchClient } from "./lib/fetchClient.js";
 
 export class CatApi {
@@ -19,7 +12,7 @@ export class CatApi {
   async fetchCats({
     page = 0,
     limit = 9,
-    api_key = process.env.CAT_API_KEY,
+    api_key = import.meta.env.VITE_CAT_API_KEY,
     breed_ids,
     mime_types,
     has_breeds = true,
