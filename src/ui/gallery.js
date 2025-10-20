@@ -1,3 +1,5 @@
+import { Modal } from "./modal";
+
 export class Gallery {
   constructor(root, catApi, favoritesStorage, favorite, Notification) {
     this.root = root;
@@ -6,6 +8,10 @@ export class Gallery {
     this.favorite = favorite;
     this.notification = Notification;
     this.page = 0;
+    this.favorite.root.addEventListener('click',()=>{
+      this.updateFavoriteButtons();
+    })
+    this.modal=new Modal()
   }
 
   async loadCats() {
@@ -38,6 +44,8 @@ export class Gallery {
         this.toggleFavorite(cat);
         this.checkFavorite(cat.id, btn);
       });
+      card.addEventListener("mouseenter", () => this.modal.show(cat, card));
+      card.addEventListener("mouseleave", () => this.modal.hide());
       this.root.appendChild(card);
     });
   }

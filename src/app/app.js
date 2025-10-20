@@ -32,27 +32,5 @@ export class App {
       await this.gallery.loadCats();
     });
   }
-  // 🔹 Nuevo método: inicializa los listeners globales
-  initEvents() {
-    // Escucha el evento local (misma pestaña)
-    window.addEventListener("favoritesUpdated", () => {
-      console.log("[App] Evento favoritesUpdated detectado");
-      this.syncViews();
-    });
-
-    // Escucha el evento global (otras pestañas)
-    window.addEventListener("storage", (e) => {
-      if (e.key === "favorites") {
-        console.log("[App] Evento storage detectado");
-        this.syncViews();
-      }
-    });
-  }
-
-  // 🔹 Nuevo método: sincroniza ambas vistas
-  syncViews() {
-    console.log("[App] Sincronizando vistas...");
-    this.favorite.renderFavorites();
-    this.gallery.updateFavoriteButtons();
-  }
+  
 }

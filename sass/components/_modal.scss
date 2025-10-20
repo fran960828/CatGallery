@@ -1,0 +1,31 @@
+.cat-modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.cat-modal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cat-modal-content h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color: #ffcc00;
+}
+
+.cat-modal-content p {
+  margin: 2px 0;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}

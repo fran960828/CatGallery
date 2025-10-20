@@ -31,8 +31,5 @@ export class FavoritesStorage {
   isFavorite(id) {
     return this.getAll().some((item) => item.id === id);
   }
-  notifyChange() {
-    // 🔔 Lanza un evento local para notificar a la galería
-    window.dispatchEvent(new Event("favoritesUpdated"));
-  }
+  
 }

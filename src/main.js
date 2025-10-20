@@ -6,3 +6,5 @@ import { Favorite } from "./ui/favorites";
 const app = new App();
 app.start();
 app.loadMoreCats();
+app.initEvents();
+app.syncViews();
