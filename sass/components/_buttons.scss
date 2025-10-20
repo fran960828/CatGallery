@@ -1,0 +1,19 @@
+@use "../abstracts/abstracts" as *;
+.load__more {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 33%;
+}
+
+#loadMoreBtn {
+  background-color: $btn-bg;
+  color: $bg_tarjeta;
+  border-radius: $btn-border-radius;
+  padding: $btn-padding;
+  &:hover {
+    background-color: $btn-hover-bg;
+    box-shadow: $btn-hover-shadow;
+    transition: $btn-transition;
+  }
+}

@@ -1,5 +1,5 @@
 export class FavoritesStorage {
-  constructor(key = 'favorites') {
+  constructor(key = "favorites") {
     this.key = key;
   }
 
@@ -17,18 +17,22 @@ export class FavoritesStorage {
 
   add(cat) {
     const list = this.getAll();
-    if (!list.some(item => item.id === cat.id)) {
+    if (!list.some((item) => item.id === cat.id)) {
       list.unshift(cat);
       this.save(list);
     }
   }
 
   remove(id) {
-    const list = this.getAll().filter(item => item.id !== id);
+    const list = this.getAll().filter((item) => item.id !== id);
     this.save(list);
   }
 
   isFavorite(id) {
-    return this.getAll().some(item => item.id === id);
+    return this.getAll().some((item) => item.id === id);
+  }
+  notifyChange() {
+    // 🔔 Lanza un evento local para notificar a la galería
+    window.dispatchEvent(new Event("favoritesUpdated"));
   }
 }

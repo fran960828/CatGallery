@@ -1,49 +1,48 @@
 @use "../abstracts/abstracts" as *;
-.hero{
-    display:grid;
-    grid-template-columns: 3fr 1fr;
-    justify-content: start;
-    align-items: start;
-    column-gap: 20px;
-    &__gallery{
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;
-        align-items: center;
-        gap:10px;
-        padding:10px;
-        background-color:$bg_tarjeta;
-        .card{
-            position: relative;
-            border-radius:5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img{
-                width: 100%;
-                height: 300px;
-                object-fit: cover;
-                display: block;
-            }
-            img:hover{
-                transition: transform($hover-img-transform);
-                box-shadow: $hover-img-shadow;
-
-            }
-            .fav-btn{
-                position:absolute;
-                top:5px;
-                right:5px;
-                width: 50px;
-                height: 50px;
-                background-color: transparent;
-                border:1px hidden black;
-                .like{
-                    width: 50px;
-                    height: 50px;
-                }
-            }
+.hero {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-content: start;
+  align-items: start;
+  column-gap: 20px;
+  margin: 40px;
+  &__gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: $bg_tarjeta;
+    .card {
+      position: relative;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+      }
+      img:hover {
+        transition: transform($hover-img-transform);
+        box-shadow: $hover-img-shadow;
+      }
+      .fav-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border: 1px hidden black;
+        .like {
+          width: 50px;
+          height: 50px;
         }
-
+      }
     }
+  }
 }

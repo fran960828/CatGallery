@@ -10,17 +10,22 @@
     <header class="header">
       <img src="img/logo.png" alt="Cat Logo" class="header__logo" />
       <h1 class="header__title">CAT GALLERY</h1>
-      <button class="header__favorites">Favorites</button>
+      <button class="header__favorites" id="favorites__btn">Favorites</button>
     </header>
-    <main class="main">
-      <div class="hero">
-        <section class="hero__gallery" id="gallery"></section>
-        <aside class="hero__favorites" id="favorites">
-          <h2 class="favorites__title">Favorites</h2>
-        </aside>
+    <main>
+      <div class="main">
+        <div class="hero">
+          <section class="hero__gallery" id="gallery"></section>
+          <div class="hero__favorites" id="favoritesSection">
+            <h2 class="favorites__title">Favorites</h2>
+            <aside class="hero__favorites" id="favorites"></aside>
+          </div>
+        </div>
+        <div class="load__more">
+          <button id="loadMoreBtn">Load More</button>
+        </div>
       </div>
-      <button class="load-more" id="loadMoreBtn">Load More</button>
-
+    </main>
     <script type="module" src="src/main.js"></script>
   </body>
 </html>
