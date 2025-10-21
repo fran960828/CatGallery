@@ -27,9 +27,11 @@ export class FavoritesStorage {
     const list = this.getAll().filter((item) => item.id !== id);
     this.save(list);
   }
+  removeAll() {
+    localStorage.removeItem(this.key);
+  }
 
   isFavorite(id) {
     return this.getAll().some((item) => item.id === id);
   }
-  
 }

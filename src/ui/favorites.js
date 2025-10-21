@@ -3,12 +3,11 @@ export class Favorite {
   constructor(root, favoritesStorage) {
     this.root = root;
     this.favoritesStorage = favoritesStorage;
-    this.modal=new Modal()
+    this.modal = new Modal();
   }
   renderFavorites() {
     this.root.innerHTML = "";
     const favorites = this.favoritesStorage.getAll();
-    
     favorites.forEach((cat) => {
       const card = document.createElement("div");
       card.className = "card";
@@ -23,10 +22,12 @@ export class Favorite {
           const btn = event.target;
           this.favoritesStorage.remove(cat.id);
           this.renderFavorites();
+          this.modal.hide();
         });
       card.addEventListener("mouseenter", () => this.modal.show(cat, card));
       card.addEventListener("mouseleave", () => this.modal.hide());
       this.root.appendChild(card);
     });
   }
+  
 }

@@ -32,5 +32,4 @@ export class App {
       await this.gallery.loadCats();
     });
   }
-  
 }

@@ -8,10 +8,11 @@ export class Gallery {
     this.favorite = favorite;
     this.notification = Notification;
     this.page = 0;
-    this.favorite.root.addEventListener('click',()=>{
+    this.clearFavorites();
+    document.body.addEventListener("click", () => {
       this.updateFavoriteButtons();
-    })
-    this.modal=new Modal()
+    });
+    this.modal = new Modal();
   }
 
   async loadCats() {
@@ -72,6 +73,14 @@ export class Gallery {
     allBtns.forEach((btn) => {
       const id = btn.dataset.id;
       btn.textContent = favorites.some((cat) => cat.id === id) ? "❤️" : "🤍";
+    });
+  }
+  clearFavorites() {
+    const btnClear = document.querySelector("#clearFavoritesBtn");
+    btnClear.addEventListener("click", () => {
+      this.favoritesStorage.removeAll();
+      this.favorite.renderFavorites();
+      this.updateFavoriteButtons();
     });
   }
 }
