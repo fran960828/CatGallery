@@ -15,10 +15,15 @@ export class Gallery {
     this.modal = new Modal();
   }
 
-  async loadCats() {
+  async loadCats(breedId = null) {
     try {
       this.notification.show("Cargando gatos...", "info");
-      const cats = await this.catApi.fetchCats({ page: this.page, limit: 9 });
+      const cats = await this.catApi.fetchCats({
+        page: this.page,
+        limit: 9,
+        has_breeds: 1,
+        breed_ids: breedId || null,
+      });
       this.renderCats(cats);
       this.page++;
     } catch (error) {
@@ -82,5 +87,9 @@ export class Gallery {
       this.favorite.renderFavorites();
       this.updateFavoriteButtons();
     });
+  }
+  resetGallery() {
+    this.root.innerHTML = "";
+    this.page = 0;
   }
 }
