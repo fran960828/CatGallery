@@ -1,8 +1,18 @@
+/**
+ * Cliente para la API de TheCatAPI.
+ * - Provee métodos para obtener imágenes y listado de razas.
+ * - Usa fetchClient (wrapper) y añade la cabecera x-api-key si está configurada.
+ *
+ * Ejemplo:
+ *  const api = new CatApi();
+ *  const cats = await api.fetchCats({ page: 0, limit: 9 });
+ */
 import { fetchClient } from "../lib/fetchClient.js";
 
 export class CatApi {
   constructor(baseUrl = "https://api.thecatapi.com/v1") {
     this.baseUrl = baseUrl;
+    // La clave se obtiene de las variables de entorno (Vite)
     this.apiKey = import.meta.env.VITE_CAT_API_KEY;
   }
 
@@ -43,6 +53,7 @@ export class CatApi {
       });
       return data;
     } catch (err) {
+      // Log para desarrollo; el llamador debe manejar la excepción
       console.error("❌ Error fetching cats:", err.message);
       throw err;
     }
