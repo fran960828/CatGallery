@@ -8,22 +8,23 @@
   </head>
   <body>
     <header class="header">
-      <img src="img/logo.png" alt="Cat Logo" class="header__logo" />
+      <img src="img/logo.svg" alt="Cat Logo" class="header__logo" />
       <h1 class="header__title">CAT GALLERY</h1>
     </header>
     <main>
       <div class="load__more">
         <button class="btn" id="loadMoreBtn">Load More</button>
+        <button class="btn" id="changeView">Ver favoritos</button>
         <button class="btn" id="clearFavoritesBtn">Clear Favorites</button>
         <div id="filter-container"></div>
       </div>
       <div class="main">
         <div class="hero">
           <section class="hero__gallery" id="gallery"></section>
-          <div class="hero__favorites" id="favoritesSection">
-            <h2 class="favorites__title">Favorites</h2>
-            <aside class="hero__favorites" id="favorites"></aside>
-          </div>
+        </div>
+        <div class="hero__favorites" id="favoritesSection">
+          <h2 class="favorites__title">Favorites</h2>
+          <aside  id="favorites"></aside>
         </div>
       </div>
     </main>

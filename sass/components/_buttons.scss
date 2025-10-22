@@ -1,9 +1,16 @@
 @use "../abstracts/abstracts" as *;
 .load__more {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 25px;
+      @media (min-width: $bp-tablet) {
+      flex-direction: row; // tablet: 2 columnas
+    }
+    @media (min-width: $bp-desktop) {
+      flex-direction: row;
+}
 }
 
 .btn {

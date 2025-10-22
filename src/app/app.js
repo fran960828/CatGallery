@@ -33,6 +33,7 @@ export class App {
   async start() {
     await this.filter.init();
     await this.gallery.loadCats(this.currentBreed);
+    this.changeView()
   }
 
   loadMoreCats() {
@@ -46,4 +47,25 @@ export class App {
     this.gallery.resetGallery(); // limpiar imágenes
     await this.gallery.loadCats(breedId); // recargar con la raza
   }
+  changeView() {
+  const btn = document.getElementById('changeView');
+  const favorites=document.getElementById('favoritesSection')
+  btn.addEventListener('click', (event) => {
+    const change = event.currentTarget;
+    
+    
+    if (change.textContent === 'Ver favoritos') {
+      // Mostrar favoritos, ocultar galería
+      this.gallery.root.style.display = 'none';
+      favorites.style.display = 'grid';
+      btn.textContent = 'Ver galería';
+    } else {
+      // Mostrar galería, ocultar favoritos
+      this.gallery.root.style.display = 'grid';
+      favorites.style.display = 'none';
+      btn.textContent = 'Ver favoritos';
+    }
+  });
+}
+
 }

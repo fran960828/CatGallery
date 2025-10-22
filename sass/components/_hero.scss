@@ -1,14 +1,22 @@
 @use "../abstracts/abstracts" as *;
 .hero {
   display: grid;
-  grid-template-columns: 3fr 1fr;
   justify-content: start;
   align-items: start;
   column-gap: 20px;
   margin: 40px;
+    max-width: 1200px;     // <- añadido
+  margin-left: auto;     // <- añadido
+  margin-right: auto;    // <- añadido
   &__gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr; // mobile: 1 columna
+    @media (min-width: $bp-tablet) {
+      grid-template-columns: repeat(2, 1fr); // tablet: 2 columnas
+    }
+    @media (min-width: $bp-desktop) {
+      grid-template-columns: repeat(3, 1fr); // desktop: 3 columnas (actual)
+    }
     justify-content: center;
     align-items: center;
     gap: 10px;
